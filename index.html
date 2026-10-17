@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Understand open-source repositories and plan your first contribution with RepoRescue AI.">
+  <title>RepoRescue AI — From Repository Confusion to Your First Contribution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" data-nav="dashboard" aria-label="RepoRescue AI dashboard">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 3.5 27 9.8v12.4L16 28.5 5 22.2V9.8L16 3.5Z" stroke="currentColor" stroke-width="2"/><path d="m11 16 3.2 3.2L21.5 12" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>RepoRescue</strong><span>AI workspace</span></span>
+      </a>
+
+      <div class="sidebar-section-label">WORKSPACE</div>
+      <nav class="primary-nav">
+        <button class="nav-link is-active" type="button" data-nav="dashboard" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span>Dashboard</button>
+        <button class="nav-link" type="button" data-nav="analysis"><span class="nav-icon" aria-hidden="true">⌕</span>Repository analysis</button>
+        <button class="nav-link" type="button" data-nav="issues"><span class="nav-icon" aria-hidden="true">◎</span>Good first issues</button>
+        <button class="nav-link" type="button" data-nav="explainer"><span class="nav-icon" aria-hidden="true">◉</span>Issue explainer</button>
+        <button class="nav-link" type="button" data-nav="roadmap"><span class="nav-icon" aria-hidden="true">☷</span>Contribution roadmap</button>
+        <button class="nav-link" type="button" data-nav="assistant"><span class="nav-icon" aria-hidden="true">✳</span>AI assistant</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon" aria-hidden="true">✦</span>
+          <strong>Your first PR starts here.</strong>
+          <p>One clear step at a time, from repo to pull request.</p>
+          <button type="button" class="text-button" data-nav="roadmap">View your roadmap <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="profile-row"><span class="avatar">G</span><span class="profile-copy"><strong>Guest workspace</strong><small>Local preview</small></span><span class="profile-menu" aria-hidden="true">···</span></div>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-separator">/</span><strong id="page-breadcrumb">Dashboard</strong></div>
+        <div class="topbar-actions"><span class="connection-status"><i></i> <span id="api-status-label">Backend not checked</span></span><button class="top-avatar" type="button" aria-label="Guest profile">G</button></div>
+      </header>
+
+      <main id="main-content" class="page-content">
+        <section class="view is-visible" id="view-dashboard" aria-labelledby="dashboard-title">
+          <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR OPEN-SOURCE COMPANION</div><h1 id="dashboard-title">Make your first contribution <span class="title-muted">feel doable.</span></h1><p class="page-intro">Understand a repository, find an issue that fits, and know exactly what to do next.</p></div><div class="welcome-badge"><span class="sparkle">✳</span><span><strong>Beginner-friendly by design</strong><small>Clarity at every step</small></span></div></div>
+
+          <div class="hero-card">
+            <div class="hero-copy"><div class="hero-kicker">START WITH A REPOSITORY</div><h2>What would you like to<br>understand today?</h2><p>Paste a public GitHub repository URL and we’ll help you find your way around.</p></div>
+            <form id="repository-form" class="repo-form" novalidate>
+              <label for="repository-url">GitHub repository URL</label>
+              <div class="input-with-icon"><span class="github-mark" aria-hidden="true">⌘</span><input id="repository-url" name="repositoryUrl" type="url" placeholder="https://github.com/owner/repository" autocomplete="url" aria-describedby="repository-hint repository-error" required><button class="clear-input" type="button" id="clear-url" aria-label="Clear repository URL" hidden>×</button></div>
+              <div class="form-helper-row"><span id="repository-hint">Private repositories need a configured backend token</span><span id="repository-error" class="field-error" role="alert"></span></div>
+              <button class="button button-primary analyze-button" type="submit"><span>Analyze repository</span><span aria-hidden="true">→</span></button>
+              <button class="preview-link" type="button" data-action="preview-analysis">See an example preview <span aria-hidden="true">↗</span></button>
+            </form>
+            <div class="hero-decoration" aria-hidden="true"><span class="decor-orbit orbit-one"></span><span class="decor-orbit orbit-two"></span><span class="decor-core">✓</span><span class="decor-node node-one">&lt;/&gt;</span><span class="decor-node node-two">#</span></div>
+          </div>
+
+          <div class="section-heading-row"><div><h2 class="section-title">Your workspace</h2><p class="section-subtitle">A few helpful places to get started.</p></div><span class="preview-label"><span></span> SAMPLE UI PREVIEW</span></div>
+          <div class="quick-grid">
+            <button class="quick-card" type="button" data-nav="analysis"><span class="quick-icon icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4 4"/></svg></span><span class="quick-content"><strong>Understand a repository</strong><small>Explore its purpose, files, and setup.</small><span class="quick-action">Start analysis <b aria-hidden="true">→</b></span></span><span class="quick-arrow" aria-hidden="true">↗</span></button>
+            <button class="quick-card" type="button" data-nav="issues"><span class="quick-icon icon-violet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg></span><span class="quick-content"><strong>Find an issue that fits</strong><small>Match open GitHub issues to your skills.</small><span class="quick-action">Personalize finder <b aria-hidden="true">→</b></span></span><span class="quick-arrow" aria-hidden="true">↗</span></button>
+            <button class="quick-card" type="button" data-nav="roadmap"><span class="quick-icon icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h13M7 10h13M7 16h13M4 4h.01M4 10h.01M4 16h.01"/></svg></span><span class="quick-content"><strong>Plan your contribution</strong><small>Turn an issue into a clear next-step plan.</small><span class="quick-action">Open roadmap <b aria-hidden="true">→</b></span></span><span class="quick-arrow" aria-hidden="true">↗</span></button>
+          </div>
+
+          <div class="section-heading-row recent-heading"><div><h2 class="section-title">Recent analyses</h2><p class="section-subtitle">Repositories you’ve explored recently.</p></div><button class="subtle-button" type="button" data-nav="analysis">View all <span aria-hidden="true">→</span></button></div>
+          <div class="recent-card" id="recent-repositories"><div class="recent-empty" id="recent-empty"><span class="empty-icon">⌕</span><strong>No repositories analyzed yet</strong><p>Paste a public GitHub URL above to get started.</p></div></div>
+          <div class="disclaimer-note"><span aria-hidden="true">ⓘ</span> Sample content is illustrative only. Live repository insights require a connected backend.</div>
+        </section>
+
+        <section class="view" id="view-analysis" aria-labelledby="analysis-title" hidden>
+          <div class="view-heading"><div><div class="eyebrow">REPOSITORY DEEP DIVE</div><h1 id="analysis-title">Repository analysis</h1><p class="page-intro">Get oriented before you make your first change.</p></div></div>
+          <div class="compact-search-card"><form id="analysis-form" class="analysis-form" novalidate><label class="sr-only" for="analysis-url">GitHub repository URL</label><input id="analysis-url" type="url" placeholder="https://github.com/owner/repository" required><button class="button button-primary" type="submit">Analyze repository <span aria-hidden="true">→</span></button></form><p class="inline-error" id="analysis-error" role="alert"></p></div>
+          <div id="analysis-loading" class="state-panel loading-state" hidden><span class="spinner" aria-hidden="true"></span><strong>Taking a closer look…</strong><p>Checking the repository details.</p></div>
+          <div id="analysis-empty" class="state-panel empty-state"><span class="state-icon">⌕</span><h2>No repository to explore yet</h2><p>Enter a GitHub URL above to request a live analysis. You can also view the clearly labeled example preview.</p><button class="button button-secondary" type="button" data-action="preview-analysis">View example preview</button></div>
+          <div id="analysis-error-state" class="state-panel error-state" hidden><span class="state-icon">!</span><h2>Analysis isn’t available yet</h2><p id="analysis-error-message">Connect the RepoRescue API to analyze a repository.</p><button class="button button-secondary" type="button" data-action="retry-analysis">Try again</button></div>
+          <div id="analysis-result" class="analysis-result" hidden></div>
+        </section>
+
+        <section class="view" id="view-issues" aria-labelledby="issues-title" hidden>
+          <div class="view-heading heading-with-action"><div><div class="eyebrow">YOUR FIRST OPEN-SOURCE TASK</div><h1 id="issues-title">Good first issues</h1><p class="page-intro">Approachable issues are a great way to learn how a project works.</p></div><button class="button button-secondary" type="button" data-nav="analysis">Choose a repository</button></div>
+          <div class="context-banner" id="issues-context"><span class="context-icon">ⓘ</span><span><strong>Issues are not loaded yet.</strong> Analyze a repository to see its open issues and find matches for your experience.</span></div>
+          <form class="finder-preferences-card" id="finder-form">
+            <div class="finder-form-heading"><div><strong>Find issues that fit you</strong><p>Gemma reviews real open issues against your experience and preferences.</p></div><span class="ai-badge">PERSONALIZED</span></div>
+            <div class="finder-filter-grid">
+              <fieldset class="finder-language-field"><legend>Languages you know <small>Choose any relevant languages detected in this repository</small></legend><div id="finder-language-options" class="finder-language-options"><span class="finder-muted">Analyze a repository to load its detected languages.</span></div></fieldset>
+              <label class="finder-field">Experience level<select id="finder-experience"><option value="beginner">New to contributions</option><option value="some-experience">Some coding / contribution experience</option><option value="experienced">Experienced contributor</option></select></label>
+              <label class="finder-field">Preferred contribution type<select id="finder-contribution"><option value="any">Any type</option><option value="bug-fix">Bug fixes</option><option value="documentation">Documentation</option><option value="tests">Tests</option><option value="accessibility">Accessibility</option><option value="performance">Performance</option><option value="feature">Features</option><option value="other">Other</option></select></label>
+              <label class="finder-field finder-skills-field">Other skills or context <span class="optional-label">optional</span><textarea id="finder-skills" rows="2" maxlength="800" placeholder="For example: familiar with HTML, learning Python, interested in documentation…"></textarea></label>
+            </div>
+            <div class="finder-actions"><span id="finder-status" class="finder-status" role="status">Choose your preferences, then find personalized issue matches.</span><div><button class="button button-secondary" id="refresh-issues" type="button" data-action="refresh-issues" disabled><span aria-hidden="true">↻</span> Refresh GitHub issues</button><button class="button button-primary" id="find-issues" type="submit" disabled>Find best matches <span aria-hidden="true">→</span></button></div></div>
+          </form>
+          <div class="issue-toolbar"><div class="filter-chip active-filter">Recommended candidates <span>0</span></div><span class="toolbar-spacer"></span><span id="issue-sort-note" class="sort-label">Ranked using your preferences and issue evidence</span></div>
+          <div id="issues-list" class="issues-list"><div class="state-panel empty-state issue-empty"><span class="state-icon">◎</span><h2>Pick a repository to get started</h2><p>We’ll show real open GitHub issues, their source links and labels, and separate those verified labels from AI-estimated difficulty.</p><button class="button button-primary" type="button" data-nav="analysis">Analyze a repository</button></div></div>
+
+
+        </section>
+
+        <section class="view" id="view-explainer" aria-labelledby="explainer-title" hidden>
+          <div class="view-heading"><div><div class="eyebrow">MAKE SENSE OF THE DETAILS</div><h1 id="explainer-title">Issue explainer</h1><p class="page-intro">Turn a dense issue description into a clear, manageable plan.</p></div></div>
+          <div id="explainer-empty" class="state-panel empty-state explainer-empty"><span class="state-icon">◉</span><h2>No issue selected</h2><p>Choose a verified issue from Good first issues to see a plain-language explanation, relevant files, and a testing checklist.</p><button class="button button-primary" type="button" data-nav="issues">Browse issues</button><button class="preview-link standalone-preview" type="button" data-action="preview-explainer">Preview sample explanation</button></div>
+          <div id="explainer-content" hidden></div>
+        </section>
+
+        <section class="view" id="view-roadmap" aria-labelledby="roadmap-title" hidden>
+          <div class="view-heading"><div><div class="eyebrow">SMALL STEPS, REAL PROGRESS</div><h1 id="roadmap-title">Contribution roadmap</h1><p class="page-intro">A practical, issue-specific plan using the repository’s actual setup and contribution guidance.</p></div><span class="roadmap-status"><span></span> Progress saved per repository and issue</span></div>
+          <div id="roadmap-empty" class="state-panel empty-state roadmap-empty"><span class="state-icon">☷</span><h2>Choose an issue to build your roadmap</h2><p>Pick a real open GitHub issue in the issue finder. Gemma will use its description, repository README, documented setup instructions, and verified contribution guidelines.</p><button class="button button-primary" type="button" data-nav="issues">Choose a GitHub issue</button></div>
+          <div id="roadmap-loading" class="state-panel loading-state" hidden><span class="spinner" aria-hidden="true"></span><strong>Building your contribution plan…</strong><p>Gemma is comparing the selected issue with repository and contributor context. No commands will be run.</p></div>
+          <div id="roadmap-error" class="state-panel error-state" hidden><span class="state-icon">!</span><h2>Couldn’t generate this roadmap</h2><p id="roadmap-error-message"></p><button class="button button-secondary" type="button" data-action="retry-roadmap">Try again</button><button class="text-button" type="button" data-nav="issues">Choose another issue</button></div>
+          <div id="roadmap-content" hidden>
+            <div class="roadmap-overview"><div><span class="roadmap-eyebrow">ISSUE-SPECIFIC PLAN · AI-GENERATED SUGGESTIONS</span><h2 id="roadmap-repo-name">Repository contribution plan</h2><p id="roadmap-repo-caption">Steps are suggestions; check the cited project documentation.</p><div id="roadmap-issue-source"></div></div><div class="progress-score"><strong id="progress-count">0 <small>/ 11</small></strong><span>steps complete</span></div><div class="progress-track" role="progressbar" aria-label="Roadmap progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div><span class="progress-percent" id="progress-percent">0% complete</span></div>
+            <div class="roadmap-execution-notice" id="roadmap-execution-notice">All commands below are suggestions only. RepoRescue did not execute Git, shell, setup, or test commands.</div>
+            <div class="roadmap-controls-row"><span id="roadmap-model-label" class="roadmap-model-label">Generated from repository evidence</span><div><button class="button button-secondary" type="button" data-action="regenerate-roadmap">Regenerate plan</button><button class="text-button reset-roadmap" type="button" data-action="reset-roadmap">Reset this issue’s progress</button></div></div>
+            <div class="roadmap-layout"><ol class="roadmap-steps" id="roadmap-steps" aria-label="Contribution roadmap checklist"></ol><aside class="roadmap-aside"><div class="aside-icon">✦</div><h3>Commands are suggestions only.</h3><p>Copy a command to inspect it. Review it before running it yourself in a terminal; this app never runs Git commands.</p><button class="text-button" type="button" data-nav="assistant">Ask about this repository <span aria-hidden="true">→</span></button><div class="roadmap-source-links" id="roadmap-source-links"></div></aside></div>
+            <div class="roadmap-footer"><span>Your checklist progress is stored in this browser for this repository and issue.</span><button type="button" class="text-button" data-nav="issues">Choose another issue</button></div>
+            <div class="roadmap-missing-info" id="roadmap-missing-info" hidden></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-assistant" aria-labelledby="assistant-title" hidden>
+          <div class="view-heading"><div><div class="eyebrow">A LITTLE HELP, RIGHT WHEN YOU NEED IT</div><h1 id="assistant-title">AI assistant</h1><p class="page-intro">Ask questions about a connected repository or contribution issue.</p></div></div>
+          <div class="assistant-layout"><div class="chat-card"><div class="chat-header"><span class="assistant-avatar">✳</span><span><strong>RepoRescue assistant</strong><small><i></i><span id="ai-assistant-status">Local model status is checked when you send.</span></small></span><span class="preview-label"><span></span> LOCAL GEMMA</span></div><div class="chat-messages" id="chat-messages" aria-live="polite"><div class="chat-date">YOUR CONVERSATION</div><div class="message assistant-message"><span class="message-avatar">✳</span><div class="message-bubble"><p>Analyze a repository and configure a local Gemma model to get grounded answers about its structure, issues, and contribution steps.</p><small>RepoRescue assistant · Local model</small></div></div><div class="chat-system-note"><span>ⓘ</span> AI responses are suggestions; verified repository details remain separate.</div></div><form class="chat-form" id="chat-form"><label for="chat-input" class="sr-only">Ask a repository question</label><textarea id="chat-input" rows="1" placeholder="Ask about a repository or issue…" maxlength="2000" required></textarea><button type="submit" class="send-button" aria-label="Send message"><span>↑</span></button><div class="chat-form-foot"><span id="chat-context">No repository selected</span><span id="chat-error" role="alert"></span><span>Enter to send · Shift + Enter for a new line</span></div></form></div><aside class="assistant-aside"><div class="aside-icon assistant-spark">✳</div><h3>Useful questions to start with</h3><button type="button" class="suggestion-chip" data-question="How is this repository organized?">How is this repository organized?</button><button type="button" class="suggestion-chip" data-question="What should I check before opening a pull request?">What should I check before opening a pull request?</button><button type="button" class="suggestion-chip" data-question="Can you explain this issue in simpler terms?">Can you explain this issue in simpler terms?</button><div class="assistant-privacy">Questions and bounded GitHub context are sent to the configured local Ollama model.</div></aside></div>
+        </section>
+
+        <footer class="app-footer"><span>RepoRescue AI</span><span>From Repository Confusion to Your First Contribution.</span><span class="footer-version">GITHUB DATA · LIVE ON REQUEST</span></footer>
+      </main>
+    </div>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
